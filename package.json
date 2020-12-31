@@ -10,12 +10,6 @@
 	"main": "dist/esbuild-plugin-svelte.js",
 	"module": "dist/esbuild-plugin-svelte.mjs",
 	"types": "types/index.d.ts",
-	"exports": {
-		".": {
-			"require": "./dist/esbuild-plugin-svelte.js",
-			"import": "./dist/esbuild-plugin-svelte.mjs"
-		}
-	},
 	"files": [
 		"dist/",
 		"types/",
