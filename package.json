@@ -25,7 +25,6 @@
 		"build": "pnpm run build:lib && pnpm run build:types",
 		"build:lib": "node build.mjs",
 		"build:types": "tsc",
-		"prepublishOnly": "pnpm run build",
 		"prepare": "pnpm run build"
 	},
 	"peerDependencies": {
