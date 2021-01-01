@@ -24,6 +24,6 @@ esbuild.build({
 	entryPoints: ['lib/index.ts'],
 	outfile: 'dist/esbuild-plugin-svelte.js',
 	format: 'cjs',
-	target: 'esnext',
+	target: 'es2018',
 	plugins: [externalPlugin],
 });
