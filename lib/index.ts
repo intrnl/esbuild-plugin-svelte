@@ -1,6 +1,5 @@
 import * as fs from 'fs/promises';
 import * as compiler from 'svelte/compiler';
-import * as esbuild from 'esbuild';
 
 import { typescriptPreprocessor } from './typescript';
 

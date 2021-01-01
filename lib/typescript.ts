@@ -1,4 +1,4 @@
-import * as esbuild from 'esbuild';
+import esbuild from 'esbuild';
 
 import type { PreprocessorGroup } from 'svelte/types/compiler/preprocess';
 
