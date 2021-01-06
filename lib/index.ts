@@ -23,16 +23,21 @@ export function svelte (options: PluginOptions = {}): Plugin {
 			build.onLoad({ filter: /\.svelte$/i }, async ({ path: filename }) => {
 				let source = await fs.readFile(filename, 'utf-8');
 
-				if (preprocess.length) {
-					source = (await compiler.preprocess(source, preprocess, { filename })).code;
-				}
-
 				let finalCompileOptions: CompileOptions = {
 					css: false,
 					...compilerOptions,
 					filename,
 					format: 'esm',
 				};
+
+				if (preprocess.length) {
+					let processed = await compiler.preprocess(source, preprocess, {
+						filename,
+					});
+
+					source = processed.code;
+					if (processed.map) finalCompileOptions.sourcemap = processed.map;
+				}
 
 				try {
 					let result = compiler.compile(source, finalCompileOptions);
