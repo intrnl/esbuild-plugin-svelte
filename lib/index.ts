@@ -12,7 +12,7 @@ export function svelte (options: PluginOptions = {}): Plugin {
 	let { compilerOptions = {}, preprocess = [], typescript = true } = options;
 
 	if (typescript) {
-		preprocess.unshift(typescriptPreprocessor);
+		preprocess = [typescriptPreprocessor, ...preprocess];
 	}
 
 	return {
