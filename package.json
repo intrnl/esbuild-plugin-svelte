@@ -18,7 +18,7 @@
 		"build": "tsc"
 	},
 	"peerDependencies": {
-		"esbuild": "^0.8.28",
+		"esbuild": ">= 0.8.28",
 		"svelte": "^3.0.0"
 	},
 	"peerDependenciesMeta": {
