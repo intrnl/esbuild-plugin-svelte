@@ -1,4 +1,5 @@
 {
+	"type": "module",
 	"name": "@intrnl/esbuild-plugin-svelte",
 	"description": "Compile Svelte components with esbuild",
 	"version": "0.1.3",
@@ -7,25 +8,14 @@
 	"repository": {
 		"url": "https://github.com/intrnl/esbuild-plugin-svelte"
 	},
-	"main": "dist/esbuild-plugin-svelte.js",
-	"module": "dist/esbuild-plugin-svelte.mjs",
-	"types": "types/index.d.ts",
-	"exports": {
-		".": {
-			"require": "./dist/esbuild-plugin-svelte.js",
-			"import": "./dist/esbuild-plugin-svelte.mjs"
-		}
-	},
+	"main": "dist/index.js",
 	"files": [
 		"dist/",
-		"types/",
 		"README.md"
 	],
 	"scripts": {
-		"build": "pnpm run build:lib && pnpm run build:types",
-		"build:lib": "node build.mjs",
-		"build:types": "tsc",
-		"prepare": "pnpm run build"
+		"prepublishOnly": "pnpm run build",
+		"build": "tsc"
 	},
 	"peerDependencies": {
 		"esbuild": "^0.8.28",
