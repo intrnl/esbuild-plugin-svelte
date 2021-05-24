@@ -1,7 +1,7 @@
 import * as fs from 'fs/promises';
 import * as compiler from 'svelte/compiler';
 
-import { typescriptPreprocessor } from './typescript';
+import { typescriptPreprocessor } from './typescript.js';
 
 import type { Plugin, PartialMessage as ESBuildMessage } from 'esbuild';
 import type { CompileOptions, Warning as SvelteWarning } from 'svelte/types/compiler/interfaces';
